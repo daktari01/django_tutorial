@@ -21,7 +21,7 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/account')
+            return redirect('/accounts/')
     else:
         form = RegistrationForm()
 
@@ -38,7 +38,7 @@ def edit_profile(request):
 
         if form.is_valid():
             form.save()
-            return redirect('/account/profile')
+            return redirect('/accounts/profile')
     
     else:
         form = EditProfileForm(instance=request.user)
@@ -52,10 +52,10 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('/account/profile')
+            return redirect('/accounts/profile')
 
         else:
-            return redirect('/account/change-password')
+            return redirect('/accounts/change-password')
     
     else:
         form = PasswordChangeForm(user=request.user)
