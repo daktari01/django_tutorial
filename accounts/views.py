@@ -10,7 +10,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
+
 def home(request):
     numbers = [1, 2, 3, 4, 5]
     name = 'Jane Doe'
