@@ -123,5 +123,12 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/accounts/'
 
+LOGIN_URL = '/accounts/login/'
+
+LOGIN_EXEMPT_URLS = (
+    r'^accounts/logout/$',
+    r'^accounts/register/$',
+)
+
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
