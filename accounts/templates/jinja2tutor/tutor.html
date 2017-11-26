@@ -1,0 +1,10 @@
+<!--  -->
+<!-- Manually disable lstrip_blocks behavior -->
+<div>
+    {%+ if something %}yay{% endif %}
+</div>
+
+<!-- Strip whitespace in templates by hand -->
+{% for item in seq -%}
+    {{ item }}
+{%- endfor %}
