@@ -128,6 +128,7 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_EXEMPT_URLS = (
     r'^accounts/logout/$',
     r'^accounts/register/$',
+    r'^accounts/reset-password/complete/$',
 )
 
 EMAIL_HOST = 'localhost'
