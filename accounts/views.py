@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 # Create your views here.
 
@@ -23,7 +24,7 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/accounts/')
+            return redirect(reverse('accounts_home'))
     else:
         form = RegistrationForm()
 
@@ -40,7 +41,7 @@ def edit_profile(request):
 
         if form.is_valid():
             form.save()
-            return redirect('/accounts/profile')
+            return redirect(reverse('view_profile'))
     
     else:
         form = EditProfileForm(instance=request.user)
@@ -54,10 +55,10 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('/accounts/profile')
+            return redirect(reverse('view_profile'))
 
         else:
-            return redirect('/accounts/change-password')
+            return redirect(reverse('change_password'))
     
     else:
         form = PasswordChangeForm(user=request.user)
