@@ -8,3 +8,16 @@
 {% for item in seq -%}
     {{ item }}
 {%- endfor %}
+
+<!-- Escape a literal variable delimiter ({{}}) -->
+{{ '{{' }}
+
+<!-- For biggger sections, marka block 'raw' -->
+{% raw %}
+    <ul>
+        {% for item in seq %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endraw %}
+
