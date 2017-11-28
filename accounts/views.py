@@ -10,14 +10,6 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
-# Create your views here.
-
-def home(request):
-    numbers = [1, 2, 3, 4, 5]
-    name = 'Jane Doe'
-
-    args = {'myName': name, 'numbers': numbers}
-    return render(request, 'accounts/home.html', args)
 
 def register(request):
     if request.method == 'POST':
