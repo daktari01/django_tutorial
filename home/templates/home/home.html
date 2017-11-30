@@ -11,4 +11,9 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <h2>{{ text }}</h2>
+    {% for post in posts %}
+        <h3>{{ post.post }}</h3>
+        <p>Posted by {{ post.user.get_full_name }} on {{ post.date }}</p>
+    {% endfor %}
+    
 {% endblock %}
