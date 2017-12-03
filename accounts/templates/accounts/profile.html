@@ -30,7 +30,8 @@
     <p>
         Website: {{ user.userprofile.website }}
     </p>
-    <img src="{{ user.userprofile.image.url }}" alt="profile picture" width="240">
-    
+    {% if userprofile.image.url %}
+        <img src="{{ user.userprofile.image.url }}" alt="profile picture" width="240">
+    {% endif %}
     
 {% endblock %}
