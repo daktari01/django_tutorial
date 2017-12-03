@@ -1,9 +1,8 @@
 from django.conf.urls import url
 from home.views import HomeView
-
+from . import views
 
 urlpatterns = [
-    #url(r'post/(?P<block_id>\d+)/$', HomeView.as_view(), name='home'),
     url(r'^$', HomeView.as_view(), name='home'),
-    #post/(?P<block_id>\d+)/$
+    url(r'^connect/(?P<operation>.+)/(?P<pk>\d+)/$', views.change_friends, name='change_friends')
 ]
